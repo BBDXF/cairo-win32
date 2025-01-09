@@ -1,0 +1,11 @@
+prefix=c:/
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+Name: cairo-png
+Description: PNG functions for cairo graphics library
+Version: 1.18.2
+Requires: cairo
+Requires.private: zlib
+Libs: -L${libdir} -lpng16
+Cflags: -I${includedir}

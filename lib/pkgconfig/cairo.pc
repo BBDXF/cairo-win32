@@ -1,0 +1,11 @@
+prefix=c:/
+includedir=${prefix}/include
+libdir=${prefix}/lib
+
+Name: cairo
+Description: Multi-platform 2D graphics library
+Version: 1.18.2
+Requires.private: zlib, pixman-1
+Libs: -L${libdir} -lcairo
+Libs.private: -lgdi32 -lmsimg32 -ldwrite -ld2d1 -lwindowscodecs -L${libdir} -lpng16
+Cflags: -I${includedir}/cairo
