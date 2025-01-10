@@ -38,7 +38,7 @@ jobs:
 
     - name: Configure Meson build
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: meson setup build-${{ matrix.arch }} --buildtype=release --default-library=both --prefix=${{env.GITHUB_WORKSPACE}}/dist/${{ matrix.arch }} --libdir=lib --bindir=bin --cross-file=cross/win32-${{ matrix.arch }}.txt
+      run: meson setup build-${{ matrix.arch }} --buildtype=release --default-library=shared --prefix=${{env.GITHUB_WORKSPACE}}/dist/${{ matrix.arch }} --libdir=lib --bindir=bin --cross-file=cross/win32-${{ matrix.arch }}.txt
 
     - name: Build project
       run: meson compile -C build-${{ matrix.arch }}
