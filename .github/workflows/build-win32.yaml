@@ -32,6 +32,10 @@ jobs:
         pip list
         pip install meson ninja
 
+    - uses: ilammy/msvc-dev-cmd@v1
+      with:
+        arch: ${{ matrix.arch }}
+
     - name: Configure Meson build
       working-directory: ${{env.GITHUB_WORKSPACE}}
       run: meson setup build-${{ matrix.arch }} --buildtype=release --default-library=both --prefix=${{env.GITHUB_WORKSPACE}}/dist/${{ matrix.arch }} --libdir=lib --bindir=bin --cross-file=cross/win32-${{ matrix.arch }}.txt
