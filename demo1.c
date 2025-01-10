@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <cairo/cairo.h>
+#include <cairo.h>
 #define PROJECT_NAME "demo1"
 
 int main(int argc, char **argv) {
