@@ -1,9 +1,9 @@
 name: Build Cairo Win32 Library
 
 on:
-	# when create tags, trigger new build
-    tags:
-      - v*
+  push:
+  pull_request:
+
 jobs:
   build:
     runs-on: windows-latest
