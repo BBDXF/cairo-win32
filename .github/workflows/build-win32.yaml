@@ -34,13 +34,13 @@ jobs:
 
     - name: Configure Meson build
       working-directory: ${{env.GITHUB_WORKSPACE}}
-      run: meson setup build-$arch --buildtype=release --default-library=both --prefix=dist/$arch --libdir=lib --bindir=bin --cross-file=cross/win32-$arch.txt
+      run: meson setup build-${{ matrix.arch }} --buildtype=release --default-library=both --prefix=dist/${{ matrix.arch }} --libdir=lib --bindir=bin --cross-file=cross/win32-${{ matrix.arch }}.txt
 
     - name: Build project
-      run: meson compile -C build-$arch
+      run: meson compile -C build-${{ matrix.arch }}
 
     - name: Install project
-      run: meson install -C build-$arch
+      run: meson install -C build-${{ matrix.arch }}
 
     - name: Archive build artifacts
       uses: actions/upload-artifact@v4
